@@ -4,6 +4,8 @@ A cybersecurity analytics demo built on the Databricks Data Intelligence Platfor
 
 ![Architecture](https://img.shields.io/badge/Databricks-Asset%20Bundle-orange) ![OCSF](https://img.shields.io/badge/Schema-OCSF%201.3-blue) ![AI](https://img.shields.io/badge/AI-Foundation%20Models-purple)
 
+![Demo](demo.gif)
+
 ## What This Demo Shows
 
 This demo showcases how the Databricks platform can support cybersecurity analytics workflows — combining data engineering, SQL analytics, and AI capabilities in a unified environment.
