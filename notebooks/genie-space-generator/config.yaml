@@ -1,0 +1,33 @@
+# Lakewatch Security Intelligence — Genie Space Configuration
+table_list:
+  - "sec_lakehouse.gold.authentication"
+  - "sec_lakehouse.gold.api_activity"
+  - "sec_lakehouse.gold.dns_activity"
+  - "sec_lakehouse.gold.vulnerability_finding"
+
+catalog: sec_lakehouse
+schema: gold
+
+genie_space_name: "Lakewatch Security Intelligence"
+
+llm_model: databricks-claude-sonnet-4-6
+
+business_domain: "Enterprise cybersecurity monitoring and threat detection using OCSF-normalized security telemetry. Covers authentication events (login attempts, brute force, MFA), API activity (privilege escalation, unauthorized access), DNS activity (DGA domains, tunneling), and vulnerability management (CVE tracking across hosts)."
+
+data_description: "OCSF-normalized security events spanning 30 days. Authentication table tracks login successes/failures with geo-location, MFA status, and source IPs. API activity records AWS CloudTrail events including IAM operations and data access. DNS activity captures queries including suspicious DGA domains and DNS tunneling attempts. Vulnerability findings track real CVEs across server infrastructure with remediation status."
+
+stakeholders_and_decisions: "SOC analysts investigate alerts and triage incidents; threat hunters search for indicators of compromise; CISOs track security posture; IT administrators monitor access patterns and vulnerability remediation; compliance officers audit data security."
+
+additional_context: "Suspicious IPs originate from Russia, China, North Korea, and Iran. Threat actors include 'admin', 'svc-backup', and 'root' accounts. C2 domains include update-service.xyz, cdn-analytics.cc, api-telemetry.ru, cloud-sync.cn. Critical CVEs include XZ Utils Backdoor, FortiOS RCE, and ScreenConnect Auth Bypass."
+
+sample_questions:
+  - "How many failed authentication attempts came from outside the US in the last 7 days?"
+  - "Show me all critical severity events across all tables in the last 24 hours"
+  - "Which users had the most blocked API calls and what operations were they attempting?"
+  - "Are there DNS queries to DGA-like domains or unusually long subdomains suggesting tunneling?"
+  - "What are the top unresolved critical CVEs and which hosts are affected?"
+  - "Show authentication events from IPs in Russia or China that successfully logged in"
+  - "What percentage of vulnerability findings are still New vs Resolved?"
+  - "Which internal hosts are generating the most suspicious DNS queries?"
+  - "Show a timeline of brute force authentication attempts over the past week"
+  - "What API operations are being called by the svc-backup and root accounts?"
