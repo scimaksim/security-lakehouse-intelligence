@@ -1,12 +1,12 @@
 # Security Lakehouse Intelligence
 
-A production-ready cybersecurity analytics demo built entirely on the Databricks Data Intelligence Platform. Deploys a full security operations dashboard with AI-powered investigation capabilities — from synthetic threat data generation to natural language querying — all within a single Databricks Asset Bundle.
+A cybersecurity analytics demo built on the Databricks Data Intelligence Platform. Deploys a security operations dashboard with AI-powered investigation capabilities — from synthetic threat data generation to natural language querying — all within a single Databricks Asset Bundle.
 
 ![Architecture](https://img.shields.io/badge/Databricks-Asset%20Bundle-orange) ![OCSF](https://img.shields.io/badge/Schema-OCSF%201.3-blue) ![AI](https://img.shields.io/badge/AI-Foundation%20Models-purple)
 
 ## What This Demo Shows
 
-**The core premise**: A Security Operations Center (SOC) analyst can go from raw security telemetry to actionable threat intelligence using nothing but the Databricks platform — no external SIEM, no separate AI tools, no custom infrastructure.
+This demo showcases how the Databricks platform can support cybersecurity analytics workflows — combining data engineering, SQL analytics, and AI capabilities in a unified environment.
 
 ### The Dashboard
 
@@ -40,24 +40,24 @@ The **Security AI Assistant** tab provides two modes:
 | **Security Schema** | DASL (Databricks Security Lakehouse) | OCSF 1.3 table schemas for normalized security telemetry |
 | **Deployment** | Databricks Asset Bundles | One-command reproducible deployment across any workspace |
 
-## The Power of Databricks AI for Cybersecurity
+## Databricks AI for Cybersecurity
 
-Traditional security platforms force analysts to context-switch between dashboards, SIEM tools, threat intel feeds, and manual SQL consoles. This demo showcases a fundamentally different approach:
+This demo illustrates several patterns for applying Databricks AI capabilities to security operations:
 
 **1. Unified Data + AI Platform**
-Security telemetry lives in the same lakehouse where AI models can query it. No data pipelines to external tools, no API integrations to maintain, no data copies getting stale.
+Security telemetry lives in the same lakehouse where AI models can query it, reducing the need for data movement between separate tools.
 
 **2. Natural Language Threat Hunting**
-SOC analysts don't need to know SQL. "Show me all authentication failures from Tor exit nodes without MFA" becomes an instant, accurate query through Genie's semantic understanding of OCSF-normalized data.
+Analysts can ask questions in plain English — e.g. "Show me authentication failures from Tor exit nodes without MFA" — and Genie translates them into SQL against OCSF-normalized data.
 
 **3. AI Agent for Complex Investigations**
-The Agent mode demonstrates how Foundation Models can orchestrate multi-step security investigations — decomposing complex questions, querying multiple data sources, correlating findings, and producing analyst-ready reports. This turns hours of manual investigation into seconds.
+Agent mode demonstrates how Foundation Models can orchestrate multi-step security investigations — decomposing complex questions, querying multiple data sources, and correlating findings into a summary report.
 
 **4. Governed and Auditable**
-Every AI-generated query runs through Unity Catalog with full lineage and access controls. The SQL is visible and auditable — analysts can verify what the AI did, not just trust a black box.
+Every AI-generated query runs through Unity Catalog with access controls. The SQL is visible and auditable — analysts can verify what the AI did.
 
 **5. Extensible to Real Data**
-While this demo uses synthetic data, the architecture is production-ready. Replace the demo data generator with real log ingestion (via DASL connectors for AWS CloudTrail, Okta, CrowdStrike, etc.) and the entire dashboard, Genie space, and AI assistant work identically on live threat data.
+This demo uses synthetic data. To use real data, replace the data generator with log ingestion via DASL connectors (AWS CloudTrail, Okta, CrowdStrike, etc.) and the dashboard and AI assistant work against the same table schemas.
 
 ## Project Structure
 

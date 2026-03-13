@@ -154,9 +154,16 @@ export default function GenieTab() {
         }
       }
     } catch (err: any) {
+      // If we already have findings, show them instead of a generic error
       setMessages(prev => {
         const updated = [...prev]
-        updated[assistantIdx] = { role: 'assistant', content: `Error: ${err.message}`, mode: 'research' }
+        const existing = updated[assistantIdx]
+        const hasFindings = existing?.findings && existing.findings.length > 0
+        if (hasFindings) {
+          updated[assistantIdx] = { ...existing, loading: false, content: existing.content || 'Research partially completed. See findings below.' }
+        } else {
+          updated[assistantIdx] = { role: 'assistant', content: `Error: ${err.message}`, mode: 'research' }
+        }
         return updated
       })
     }
